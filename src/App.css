@@ -1,0 +1,49 @@
+body, html, #root {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  height: 100%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-sidebar {
+  align-self: flex-start;
+  background-color: #444243;
+  height: 100%;
+  color: white;
+  padding: 0 40px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+#sidebar {
+  background-color: #444243;
+  color: white;
+  border-right: none;
+}
+
+#navigation a {
+  color: white;
+}
+
+#navigation a:hover {
+  background-color: #706E6F;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#footer {
+  background-color: black;
+}
