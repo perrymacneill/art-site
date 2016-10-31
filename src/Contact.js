@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Textfield, Button, Card, CardTitle, CardText, CardActions, CardMenu, IconButton, Snackbar } from 'react-mdl';
+import { Textfield, Button, Card, CardTitle, CardText, CardActions, Snackbar } from 'react-mdl';
 import './App.css';
 
 class Contact extends Component {
@@ -8,11 +8,25 @@ class Contact extends Component {
     super(props);
     this.handleShowSnackbar = this.handleShowSnackbar.bind(this);
     this.handleTimeoutSnackbar = this.handleTimeoutSnackbar.bind(this);
-    this.state = { isSnackbarActive: false };
+    this.state = { isSnackbarActive: false, buttonClicked: false };
   }
 
   handleShowSnackbar() {
+    let values = {
+      name: document.getElementById('name-input').value,
+      email: document.getElementById('email-input').value,
+      note: document.getElementById('note-input').value
+    };
+
+//TODO
+    var request = new XMLHttpRequest();
+    request.open('POST', '/my/url', true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(values);
+
+    console.log(values)
     this.setState({ isSnackbarActive: true });
+    this.setState({ buttonClicked: true });
   }
   handleTimeoutSnackbar() {
     this.setState({ isSnackbarActive: false });
@@ -29,25 +43,26 @@ class Contact extends Component {
           </CardText>
           <CardActions>
             <Textfield
+              id="name-input"
               onChange={() => {}}
               label="Name..."
               floatingLabel
-              style={{width: '200px'}}
             /><br/>
             <Textfield
+              id="email-input"
               onChange={() => {}}
               label="Email..."
               floatingLabel
-              style={{width: '200px'}}
             /><br/>
             <Textfield
+              id="note-input"
               onChange={() => {}}
               label="Enter note"
               rows={5}
               floatingLabel
-              style={{width: '200px'}}
             /><br/>
-            <Button raised ripple colored id="submit-button" onClick={this.handleShowSnackbar}>Submit</Button>
+            {(this.state.buttonClicked && <Button raised disabled colored id="submit-button">Submit</Button>) ||
+            <Button raised ripple colored id="submit-button" onClick={this.handleShowSnackbar}>Submit</Button>}
           </CardActions>
         </Card>
         <Snackbar
