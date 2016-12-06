@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, hashHistory } from 'react-router'
 import Sidebar from './Sidebar';
 import Gallery1 from './Gallery1';
 import Gallery2 from './Gallery2';
@@ -12,7 +12,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 
 ReactDOM.render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route component={Sidebar}>
       <Route path="/" component={Work}/>
       <Route path="about" component={About}/>
