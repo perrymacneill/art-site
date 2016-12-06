@@ -13,10 +13,6 @@ class Gallery2 extends Component {
               <Cell col={4} tablet={4} phone={12}><img src="/images/decay3.jpg" alt="" /></Cell>
           </Grid>
         </div>
-        <Footer size="mini" id="footer">
-          <FooterSection type="left" logo="Copyright © 2016 Tyler Baker">
-          </FooterSection>
-        </Footer>
       </div>
     );
   }
