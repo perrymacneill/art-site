@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Textfield, Button, Card, CardTitle, CardText, CardActions, Snackbar } from 'react-mdl';
 import './App.css';
+import $ from 'jquery';
 
 class Contact extends Component {
 
@@ -12,22 +13,31 @@ class Contact extends Component {
   }
 
   handleShowSnackbar() {
-    let values = {
+    const URL = 'https://8dcw2tnu60.execute-api.us-west-2.amazonaws.com/prod/contact';
+
+    let data = {
       name: document.getElementById('name-input').value,
       email: document.getElementById('email-input').value,
-      note: document.getElementById('note-input').value
+      description: document.getElementById('note-input').value
     };
 
-//TODO
-    var request = new XMLHttpRequest();
-    request.open('POST', '/my/url', true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    request.send(values);
-
-    console.log(values)
+    $.ajax({
+      type: 'POST',
+      url: URL,
+      dataType: 'json',
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      success: function () {
+        // clear form and show a success message
+      },
+      error: function () {
+        // show an error message
+      }
+    })
     this.setState({ isSnackbarActive: true });
     this.setState({ buttonClicked: true });
   }
+
   handleTimeoutSnackbar() {
     this.setState({ isSnackbarActive: false });
   }

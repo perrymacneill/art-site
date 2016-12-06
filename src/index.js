@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router'
 import Sidebar from './Sidebar';
-import Gallery from './Gallery';
+import Gallery1 from './Gallery1';
+import Gallery2 from './Gallery2';
+import About from './About';
 import Contact from './Contact';
+import Work from './Work';
 import './index.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
@@ -11,8 +14,11 @@ import 'react-mdl/extra/material.js';
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route component={Sidebar}>
-      <Route path="/" component={Gallery}/>
+      <Route path="/" component={Work}/>
+      <Route path="about" component={About}/>
       <Route path="contact" component={Contact}/>
+      <Route path="gallery1" component={Gallery1}/>
+      <Route path="gallery2" component={Gallery2}/>
     </Route>
   </Router>
 ), document.getElementById('root'))
