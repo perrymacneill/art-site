@@ -8,7 +8,6 @@ class Gallery1 extends Component {
       <div>
         <div style={{width: '80%', margin: 'auto'}}>
           <Grid className="demo-grid">
-              <Cell col={4} tablet={4} phone={12}><img src="/images/become1.jpg" alt="" /></Cell>
               <Cell col={4} tablet={4} phone={12}><img src="/images/become2.jpg" alt="" /></Cell>
               <Cell col={4} tablet={4} phone={12}><img src="/images/become3.jpg" alt="" /></Cell>
               <Cell col={4} tablet={4} phone={12}><img src="/images/become4.jpg" alt="" /></Cell>

@@ -12,7 +12,7 @@ class Work extends Component {
       <Grid className="demo-grid">
           <Cell col={4} tablet={4} phone={12}>
             <Card shadow={0} style={{width: '340px', margin: 'auto'}}>
-              <CardTitle style={{color: '#424242', height: '176px', background: 'url(/images/become1.jpg) center / cover'}}>Become</CardTitle>
+              <CardTitle style={{color: '#424242', height: '176px', background: 'url(/images/become2.jpg) center / cover'}}>Become</CardTitle>
               <CardActions border>
                   <Link to="/gallery1"><Button>View</Button></Link>
               </CardActions>
