@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router'
 import Sidebar from './Sidebar';
-import Gallery1 from './Gallery1';
-import Gallery2 from './Gallery2';
+import Gallery from './Gallery';
 import About from './About';
 import Contact from './Contact';
 import Work from './Work';
@@ -17,8 +16,8 @@ ReactDOM.render((
       <Route path="/" component={Work}/>
       <Route path="about" component={About}/>
       <Route path="contact" component={Contact}/>
-      <Route path="gallery1" component={Gallery1}/>
-      <Route path="gallery2" component={Gallery2}/>
+      <Route path="become" component={Gallery} photos={[...Array(4)].map((x, i) => `/images/become${i+1}.jpg`)}/>
+      <Route path="decay" component={Gallery} photos={[...Array(3)].map((x, i) => `/images/decay${i+1}.jpg`)}/>
     </Route>
   </Router>
 ), document.getElementById('root'))
