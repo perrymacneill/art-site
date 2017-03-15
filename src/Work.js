@@ -26,9 +26,9 @@ class Work extends Component {
             </Cell>
             <Cell col={4} tablet={4} phone={12}>
               <Card shadow={0} style={{width: '340px', margin: 'auto'}}>
-                <CardTitle style={{color: '#424242', height: '176px'}}>Rebirth</CardTitle>
+                <CardTitle style={{color: '#424242', height: '176px', background: 'url(/images/rebirth2.jpg) center / cover'}}>Rebirth</CardTitle>
                 <CardActions border>
-                  <Button>Coming soon...</Button>
+                  <Link to="/rebirth"><Button>View</Button></Link>
                 </CardActions>
               </Card>
             </Cell>

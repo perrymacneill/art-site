@@ -18,6 +18,7 @@ ReactDOM.render((
       <Route path="contact" component={Contact}/>
       <Route path="become" component={Gallery} photos={[...Array(4)].map((x, i) => `/images/become${i+1}.jpg`)}/>
       <Route path="decay" component={Gallery} photos={[...Array(3)].map((x, i) => `/images/decay${i+1}.jpg`)}/>
+      <Route path="rebirth" component={Gallery} photos={[...Array(2)].map((x, i) => `/images/rebirth${i+1}.jpg`)}/>
     </Route>
   </Router>
 ), document.getElementById('root'))
